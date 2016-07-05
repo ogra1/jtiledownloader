@@ -5,7 +5,7 @@ to download tiles from OpenStreetMap to use offline with your navigation softwar
 
 An x86_64 binary snap is in the Ubuntu Snap Store and can be installed using
 
-    sudo snap intall jtiledownloader
+    sudo snap install jtiledownloader
 
 ... on any system that supports snap packages.
 
