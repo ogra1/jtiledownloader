@@ -17,6 +17,6 @@ parts:
       - wget
       - unzip
     stage-packages:
-      - libgdk-pixbuf2.0-0
+      - gtk2-engines-murrine
       - hicolor-icon-theme
       - openjdk-8-jdk
