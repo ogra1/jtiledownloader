@@ -1,0 +1,27 @@
+name: jtiledownloader
+version: 0.6.1
+summary: Download OSM maps
+description: Download maps from OpenStreetMap for offline use
+confinement: strict
+
+apps:
+    jtiledownloader:
+      command: wrapper
+      plugs: [opengl, home, x11, network, network-bind, pulseaudio]
+
+parts:
+  tiledownload:
+    source: ./
+    plugin: make
+    build-packages:
+      - wget
+      - unzip
+    stage-packages:
+      - openjdk-8-jdk
+      - dconf-gsettings-backend
+      - libgdk-pixbuf2.0-0
+      - libgl1-mesa-glx
+      - libglib2.0-0
+      - libgtk-3-0
+      - libnss3
+      - ttf-ubuntu-font-family

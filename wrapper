@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ "$SNAP_ARCH" = "amd64" ]; then
+  ARCH="x86_64-linux-gnu"
+elif [ "$SNAP_ARCH" = "armhf" ]; then
+  ARCH="arm-linux-gnueabihf"
+else
+  ARCH="$SNAP_ARCH-linux-gnu"
+fi
+
+export PATH="$SNAP/bin:$SNAP/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$ARCH:$SNAP/usr/lib/$ARCH"
+export LD_LIBRARY_PATH="$SNAP/usr/lib/$ARCH/mesa:$LD_LIBRARY_PATH"
+export JAVA_HOME=$SNAP/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+export LD_LIBRARY_PATH="$SNAP/usr/lib/$ARCH:$SNAP/usr/lib/$ARCH/pulseaudio:$LD_LIBRARY_PATH"
+
+export XKB_CONFIG_ROOT=$SNAP/usr/share/X11/xkb
+export XDG_DATA_HOME=$SNAP/usr/share
+export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
+export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
+export LIBGL_DRIVERS_PATH=$SNAP/usr/lib/$ARCH/dri
+
+export GDK_PIXBUF_MODULE_FILE=$SNAP_USER_DATA/gdk-pixbuf-loaders.cache
+export GDK_PIXBUF_MODULEDIR=$SNAP/usr/lib/$ARCH/gdk-pixbuf-2.0/2.10.0/loaders
+
+$SNAP/usr/lib/$ARCH/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders > $GDK_PIXBUF_MODULE_FILE
+
+[ -e "$SNAP_USER_DATA/appConfig.xml" ] || cp $SNAP/appConfig.xml $SNAP_USER_DATA/appConfig.xml
+
+cd $SNAP_USER_DATA
+
+$JAVA_HOME/jre/bin/java -jar $SNAP/jTileDownloader-0-6-1.jar
