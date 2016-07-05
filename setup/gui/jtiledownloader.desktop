@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=jTileDownloader
 Comment=Download map tiles
-Exec=/snap/bin/jtiledownloader
+Exec=jtiledownloader
 Icon=$SNAP/meta/gui/icon.png
 Terminal=false
 Type=Application
