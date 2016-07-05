@@ -7,7 +7,7 @@ confinement: strict
 apps:
     jtiledownloader:
       command: wrapper
-      plugs: [opengl, home, x11, network, network-bind, pulseaudio]
+      plugs: [home, x11, network, network-bind]
 
 parts:
   tiledownload:
@@ -18,10 +18,5 @@ parts:
       - unzip
     stage-packages:
       - openjdk-8-jdk
-      - dconf-gsettings-backend
       - libgdk-pixbuf2.0-0
-      - libgl1-mesa-glx
-      - libglib2.0-0
-      - libgtk-3-0
-      - libnss3
-      - ttf-ubuntu-font-family
+      - hicolor-icon-theme

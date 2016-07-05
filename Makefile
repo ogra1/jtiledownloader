@@ -3,7 +3,6 @@ all: unpack
 unpack:
 	wget http://svn.openstreetmap.org/applications/utils/downloading/JTileDownloader/trunk/release/jTileDownloader-0-6-1.zip
 	unzip jTileDownloader-0-6-1.zip
-	chmod +x jTileDownloader/jTileDownloader-0-6-1.jar
 
 install:
 	install -m755 jTileDownloader/jTileDownloader-0-6-1.jar $(DESTDIR)
