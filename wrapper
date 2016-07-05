@@ -17,7 +17,7 @@ export XDG_DATA_HOME=$SNAP/usr/share
 export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
 export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
 
-# theme (currently unused)
+# theme
 export GTK2_RC_FILES=$SNAP/gtkrc
 
 export GTK_PATH=$SNAP/usr/lib/$ARCH/gtk-2.0
