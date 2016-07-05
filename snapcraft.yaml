@@ -17,6 +17,6 @@ parts:
       - wget
       - unzip
     stage-packages:
-      - openjdk-8-jdk
       - libgdk-pixbuf2.0-0
       - hicolor-icon-theme
+      - openjdk-8-jdk
