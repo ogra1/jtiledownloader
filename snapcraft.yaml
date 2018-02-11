@@ -17,6 +17,9 @@ parts:
     build-packages:
       - wget
       - unzip
+      - ca-certificates
+      - ca-certificates-java
+      - openjdk-8-jre-headless
     stage-packages:
       - gtk2-engines-murrine
       - hicolor-icon-theme
