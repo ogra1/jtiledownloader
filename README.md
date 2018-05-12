@@ -1,3 +1,5 @@
+[![Snap Status](https://build.snapcraft.io/badge/ogra1/jtiledownloader.svg)](https://build.snapcraft.io/user/ogra1/jtiledownloader)
+
 # jTileDownloader snap package
 
 This is the snapcraft tree to create a package of the jTileDownloader tool that allows you 
