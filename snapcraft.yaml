@@ -1,5 +1,5 @@
 name: jtiledownloader
-version: 0.6.1-1.1
+version: 0.6.1-1.2
 summary: Download OSM maps
 description: Download maps from OpenStreetMap for offline use
 grade: stable
